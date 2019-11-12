@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveLogsTopic", "Receive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveLogsDirect", "ReceiveLogsDirect\ReceiveLogsDirect.csproj", "{E855DE4B-AB54-4B6F-B39A-1BD61991998F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendAndReceiveWithWorker", "SendAndReceiveWithWorker\SendAndReceiveWithWorker.csproj", "{C69C6FCB-8E36-45AA-9CDE-D9529C637AE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{E855DE4B-AB54-4B6F-B39A-1BD61991998F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E855DE4B-AB54-4B6F-B39A-1BD61991998F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E855DE4B-AB54-4B6F-B39A-1BD61991998F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69C6FCB-8E36-45AA-9CDE-D9529C637AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69C6FCB-8E36-45AA-9CDE-D9529C637AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69C6FCB-8E36-45AA-9CDE-D9529C637AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69C6FCB-8E36-45AA-9CDE-D9529C637AE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
