@@ -10,6 +10,7 @@ namespace SendAndReceiveWithWorker
 {
     class Program
     {
+        
         //  private static Logger logger = LogManager.GetCurrentClassLogger();
         private static readonly int NumberOfThreads = int.Parse(ConfigurationManager.AppSettings["numberOfThreads"]);
 
@@ -42,7 +43,7 @@ namespace SendAndReceiveWithWorker
                     channel.QueueDeclare(queue: "task_queue", durable: true, exclusive: false, autoDelete: false, arguments: null);
                     channel.QueuePurge("task_queue");
 
-                for (int i =0 ; i<5000; i++)
+                for (int i =0 ; i<=1000; i++)
                     {
                         var body = Encoding.UTF8.GetBytes($" message{i}");
 
@@ -63,6 +64,7 @@ namespace SendAndReceiveWithWorker
 
         private static void Worker()
         {
+            
             Logging  logging = new Logging();
                var factory = new ConnectionFactory() { HostName = "localhost" };
             using (var connection = factory.CreateConnection())
@@ -86,6 +88,11 @@ namespace SendAndReceiveWithWorker
                     Thread.Sleep(5000);
 
                     Console.WriteLine(" [x] Done");
+                    using (RabbitMqModel reModel = new RabbitMqModel())
+                    {
+                        reModel.Logs.Add(new Log() {Message = message});
+                        reModel.SaveChanges();
+                    }
 
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 };
